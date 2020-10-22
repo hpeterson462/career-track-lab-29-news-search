@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Article.css';
 
 const Article = ({ title, author, description }) => (
   <>
@@ -10,8 +9,10 @@ const Article = ({ title, author, description }) => (
   </>
 );
 
-Article.PropTypes = {
+Article.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired
-}
+};
+
+export default Article;

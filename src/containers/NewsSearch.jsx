@@ -8,7 +8,7 @@ export default class NewsSearch extends Component {
   }
 
   componentDidMount() {
-    getArticles()
+    getApi()
       .then(articles => {
         this.setState({ articles, loading: false });
       });

@@ -1,25 +1,40 @@
 import React, { Component } from 'react';
+import Search from '../components/app/Search.jsx';
+import Loading from '../components/Loading/Loading.jsx';
 import AllArticles from '../components/app/AllArticles.jsx';
 
 export default class NewsSearch extends Component {
   state = {
-    loading: true,
+    loading: false,
+    text: '',
     articles: []
   }
 
-  componentDidMount() {
-    getApi()
-      .then(articles => {
-        this.setState({ articles, loading: false });
-      });
+  handleChange = ({ target }) => {
+    this.setState({ text: target.value })
+  }
+
+  handleSubmit = async (e) => {
+    e.preventDefault();
+    searchNews(this.state.text)
+      .then(articles => this.setState({ articles }))
   }
 
   render() {
-    const { loading, articles } = this.state;
+    const { loading, text, articles } = this.state;
     if (loading) return <Loading />;
 
     return (
-      <AllArticles articles={articles} />
+      <div>
+        <Search
+          text={text}
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
+        />
+        <AllArticles
+          articles={articles}
+        />
+      </div>
     );
   }
 }

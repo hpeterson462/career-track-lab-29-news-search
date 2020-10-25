@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import AllArticles from './AllArticles.jsx';
-import { getApi } from '../../../services/api.js';
+import { getApi } from '../../services/api.js';
 
 jest.mock('../../../services/api.js');
 describe('AllArticles container', () => {

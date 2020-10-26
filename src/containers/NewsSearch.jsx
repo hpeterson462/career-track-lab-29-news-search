@@ -33,6 +33,9 @@ export default class NewsSearch extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         /> */}
+        <AllArticles
+          articles={articles}
+        />
 
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="text">Search News</label>
@@ -45,10 +48,6 @@ export default class NewsSearch extends Component {
           />
           <button type="submit">Search</button>
         </form>
-
-        <AllArticles
-          articles={articles}
-        />
       </div>
     );
   }

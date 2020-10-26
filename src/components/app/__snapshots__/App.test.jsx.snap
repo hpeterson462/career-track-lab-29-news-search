@@ -2,10 +2,28 @@
 
 exports[`App component renders App 1`] = `
 <DocumentFragment>
-  <img
-    alt="dog carrying newspaper"
-    class="Loading"
-    src="https://cdn.dribbble.com/users/15084/screenshots/729455/dogloader-dribbble.gif"
-  />
+  <div>
+    <ul
+      data-testid="articles"
+    />
+    <form>
+      <label
+        for="text"
+      >
+        Search News
+      </label>
+      <input
+        id="text"
+        name="text"
+        type="text"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+  </div>
 </DocumentFragment>
 `;

@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const Search = ({
   text,
@@ -7,7 +7,7 @@ const Search = ({
   onSubmit
 }) => {
   <form onSubmit={onSubmit}>
-    <label htmlFor="text"></label>
+    <label htmlFor="text">Search</label>
     <input
       id="text"
       type="text"
@@ -20,7 +20,9 @@ const Search = ({
 };
 
 Search.propTypes = {
-  text: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  text: propTypes.string.isRequired,
+  onChange: propTypes.func.isRequired,
+  onSubmit: propTypes.func.isRequired
 }
+
+// export default Search;

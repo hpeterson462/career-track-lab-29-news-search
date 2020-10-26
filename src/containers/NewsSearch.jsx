@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Search from '../components/app/Search.jsx';
-import Loading from '../components/Loading/Loading.jsx';
-import AllArticles from '../components/app/AllArticles.jsx';
+import Search from '../components/Search/Search';
+import Loading from '../components/Loading/Loading';
+import AllArticles from '../components/AllArticles/AllArticles';
+import { getApi } from '../services/api';
 
 export default class NewsSearch extends Component {
   state = {
@@ -16,7 +17,8 @@ export default class NewsSearch extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    searchNews(this.state.text)
+    this.setState({ loading: true })
+    getApi(this.state.text)
       .then(articles => this.setState({ articles }))
   }
 
@@ -26,14 +28,26 @@ export default class NewsSearch extends Component {
 
     return (
       <div>
-        <Search
+        {/* <input type="text" onChange={this.handleChange} /> */}
+        {/* <Search
           text={text}
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
-        />
+        /> */}
         <AllArticles
           articles={articles}
         />
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="text">Search News</label>
+          <input
+            id="text"
+            type="text"
+            name="text"
+            value={text}
+            onChange={this.handleChange}
+          />
+          <button type="submit">Search</button>
+        </form>
       </div>
     );
   }

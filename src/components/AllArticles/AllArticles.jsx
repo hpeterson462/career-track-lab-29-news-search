@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import Article from '../Article/Article.jsx';
+import Article from '../Article/Article';
+import Search from '../Search/Search';
 
 const AllArticles = ({ articles }) => {
   const articleElements = articles.map(article => (
     <li key={article.id}>
       <Link to={`/details/${article.id}`}>
-        <Article {...article} />
+        <Search {...article} />
       </Link>
     </li>
   ));

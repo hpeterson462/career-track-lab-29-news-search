@@ -8,7 +8,7 @@ const AllArticles = ({ articles }) => {
   const articleElements = articles.map(article => (
     <li key={article.id}>
       <Link to={`/details/${article.id}`}>
-        <Search {...article} />
+        <Article {...article} />
       </Link>
     </li>
   ));

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Search from '../components/Search/Search';
 import Loading from '../components/Loading/Loading';
 import AllArticles from '../components/AllArticles/AllArticles';
 import { getApi } from '../services/api';
@@ -34,9 +33,7 @@ export default class NewsSearch extends Component {
           onChange={this.handleChange}
           onSubmit={this.handleSubmit}
         /> */}
-        <AllArticles
-          articles={articles}
-        />
+
         <form onSubmit={this.handleSubmit}>
           <label htmlFor="text">Search News</label>
           <input
@@ -48,6 +45,10 @@ export default class NewsSearch extends Component {
           />
           <button type="submit">Search</button>
         </form>
+
+        <AllArticles
+          articles={articles}
+        />
       </div>
     );
   }

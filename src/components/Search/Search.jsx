@@ -25,4 +25,4 @@ Search.propTypes = {
   onSubmit: propTypes.func.isRequired
 }
 
-// export default Search;
+export default Search;
